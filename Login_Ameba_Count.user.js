@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name        Login Ameba Count + AD Check
 // @namespace        http://tampermonkey.net/
-// @version        0.8
+// @version        0.9
 // @description        ブログページでログイン・アウト状況のカウンター＋ADダイアログ観測
 // @author        Ameba Blog User
 // @match        https://ameblo.jp/*
@@ -44,7 +44,7 @@ function main(){
 
 
     function clear_disp(){
-        let topics=document.querySelector('._TiKJItsG');
+        let topics=document.querySelector('._3DS81Rv5');
         if(topics){
             topics.style.background="#fff";
             if(topics.querySelector('#lac')){
@@ -54,7 +54,7 @@ function main(){
 
     function ad_check(){
         let b_ad=document.querySelector('#rise-interstitial-area');
-        let topics=document.querySelector('._TiKJItsG');
+        let topics=document.querySelector('._3DS81Rv5');
         if(topics){
             if(b_ad){
                 let disp=0; // 実際にAD表示「1」
@@ -80,7 +80,7 @@ function main(){
         if(LAC!=0){
             let LAC_data=LAC.split('　');
 
-            let login_user=document.querySelector('._3qMawLFY');
+            let login_user=document.querySelector('._2g4ltB70');
             if(login_user){ // ログインを確認
                 LAC_data[0]=LAC_data[0]/1+1;
                 LAC=LAC_data[0]+'　'+LAC_data[1];
@@ -93,14 +93,14 @@ function main(){
                     let y_pos=document.documentElement.scrollTop
                     sessionStorage.setItem('LA_pos', y_pos); // 現在のスクロール位置を記録
 
-                    let sw=document.querySelector('._Ja750p9p > a');
+                    let sw=document.querySelector('._2nlOk1N- > a');
                     if(sw){
                         sw.click(); } // ログインボタンを押す（結果はリロード）
                 }}
         } // if(LAC!=0)
 
 
-        let topics=document.querySelector('._TiKJItsG');
+        let topics=document.querySelector('._3DS81Rv5');
         if(topics){ //「*️⃣」ボタンを表示
             let sw=
                 '<div id="lac"><div id="lac_sw">*️⃣</div>'+
